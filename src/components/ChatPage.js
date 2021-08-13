@@ -54,26 +54,34 @@ const ChatPage = () => {
   const [data] = GetData(selectedRoom);
 
   return (
-    <div>
-      Chat Page
-      <RoomList
-        value={createRoomName}
-        onChange={(e) => setCreateRoomName(e.target.value)}
-        onClick={createRoom}
-        username={username}
-        roomNames={roomNames}
-        selectedRoom={selectRoom}
-      ></RoomList>
-      {!selectedRoom.length ? (
-        <h1>Oda seçiniz</h1>
-      ) : (
-        <ChatRoom
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}
-          onClick={handleSendData}
-          data={data}
-        />
-      )}
+    <div className="container-fluid">
+      <div className="row">
+        <div className="col-md-4 col-xl-3 chat">
+          <br />
+          <RoomList
+            value={createRoomName}
+            onChange={(e) => setCreateRoomName(e.target.value)}
+            onClick={createRoom}
+            username={username}
+            roomNames={roomNames}
+            selectedRoom={selectRoom}
+          ></RoomList>
+        </div>
+
+        {!selectedRoom.length ? (
+          <h1>Oda seçiniz</h1>
+        ) : (
+          <div className="col-md-8 col-xl-6 chat">
+            <ChatRoom
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              onClick={handleSendData}
+              data={data}
+              selectedRoom={selectedRoom}
+            />
+          </div>
+        )}
+      </div>
     </div>
   );
 };

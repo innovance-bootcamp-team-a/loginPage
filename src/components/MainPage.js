@@ -17,7 +17,7 @@ const MainPage = () => {
   };
 
   return (
-    <div className="">
+    <div>
       <div className="main-bg">
         <div className="login-container text-c animated flipInX">
           <div>
@@ -25,7 +25,7 @@ const MainPage = () => {
               <FontAwesomeIcon icon={faUserCircle} />
             </h1>
           </div>
-          <p className="text-whitesmoke">Giriş yap</p>
+          <p className="text-whitesmoke">Sign in</p>
           <div className="container-content">
             <form className="margin-t">
               <div className="form-group">
